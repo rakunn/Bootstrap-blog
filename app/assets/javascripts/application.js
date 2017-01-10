@@ -16,4 +16,5 @@
 //= require bootstrap-sprockets
 //= require jqBootstrapValidation
 //= require clean-blog.js
+//= require main
 // require_tree .

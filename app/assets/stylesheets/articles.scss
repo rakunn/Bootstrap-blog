@@ -1,3 +1,27 @@
+.top-alert-container{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: -150px;
+  z-index: 4;
+  -webkit-transition: top .5s ease-in-out;
+  -moz-transition: top .5s ease-in-out;
+  -o-transition: top .5s ease-in-out;
+  transition: top .5s ease-in-out;
+
+  p{
+    text-align: center;
+
+    i{
+      margin-right: 15px;
+    }
+  }
+
+  &.enter-view{
+    top:0;
+  }
+}
+
 .intro-header{
   position: relative;
 
@@ -5,12 +29,12 @@
     position: relative;
 
     .edit_link{
-      position: absolute;
-      bottom: 0;
-      right: 0;
+      position: relative;
+      float: right;
       color: #FFF;
       background: #32244e;
       padding: 15px 25px;
+      margin-left: 10px;
 
       &:hover{
         background: lighten(#32244e, 5%);

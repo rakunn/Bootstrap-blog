@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to @article
+      redirect_to @article, :notice => 'Article created with success!'
     else
       render 'new'
     end
@@ -27,9 +27,16 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update_attributes(article_params)
-      redirect_to @article
+      redirect_to @article, :notice => 'Article updated with success!'
     else
       render 'edit'
+    end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    if @article.destroy
+      redirect_to articles_path, :notice => 'Article deleted with success!'
     end
   end
 
