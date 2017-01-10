@@ -1,0 +1,29 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header post-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1><%= @article.title %></h1>
+          <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+          <span class="meta">Posted by <a href="#">Start Bootstrap</a> on <%= @article.created_at.strftime("%B %d, %Y") %></span>
+        </div>
+      </div>
+    </div>
+    <%= link_to edit_article_path(@article), class: 'edit_link' do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Article
+    <% end %>
+  </div>
+</header>
+
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p><%= @article.body %></p>
+      </div>
+    </div>
+  </div>
+</article>

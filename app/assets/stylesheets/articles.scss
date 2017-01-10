@@ -1,0 +1,53 @@
+.intro-header{
+  position: relative;
+
+  .container{
+    position: relative;
+
+    .edit_link{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: #FFF;
+      background: #32244e;
+      padding: 15px 25px;
+
+      &:hover{
+        background: lighten(#32244e, 5%);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.form-style{
+  p{
+    label{
+      font-weight: 600;
+    }
+
+    input[type=text],textarea{
+      width: 100%;
+      padding: 15px;
+      border-radius: 4px;
+      border: 1px solid #cecece;
+    }
+
+    textarea{
+      height: 250px;
+    }
+
+    input[type=submit]{
+      color: #FFF;
+      background: #32244e;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 4px;
+
+      &:hover{
+        background: lighten(#32244e, 5%);
+        text-decoration: none;
+      }
+    }
+  }
+}
