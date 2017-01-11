@@ -80,4 +80,27 @@ article{
   hr{
     border-color:#232323;
   }
+
+  .comment-title{
+    display: inline-block;
+  }
+
+  .comment-section{
+    margin-top: 50px;
+
+    .comment-container{
+      p{
+        margin-top: 15px;
+        margin-bottom: 0px;
+
+        &.posted-date{
+          margin-top: 0;
+          color: #929292;
+          font-size: 15px;
+        }
+      }
+
+      margin-bottom: 45px;
+    }
+  }
 }

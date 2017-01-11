@@ -30,12 +30,13 @@
       </div>
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <hr/>
+        <h2 class="comment-title">Comments</h2>
         <button type="button" class="btn btn-primary btn-md pull-right" data-toggle="modal" data-target="#myModal">
           Post a comment
         </button>
       </div>
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <% render partial: 'articles/comment', collection: @article.comments %>
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 comment-section">
+        <%= render partial: 'articles/comment', collection: @article.comments %>
       </div>
     </div>
   </div>
