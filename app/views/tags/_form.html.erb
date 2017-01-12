@@ -1,0 +1,14 @@
+<%= form_for @tag, html:{class: 'form-style'} do |f| %>
+    <ul>
+      <% @tag.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+      <% end %>
+    </ul>
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

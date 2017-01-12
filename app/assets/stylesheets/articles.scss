@@ -127,3 +127,19 @@ article{
     }
   }
 }
+
+.tbl-tags{
+  a{
+    text-decoration: underline;
+
+    &.edit-tags{
+      color: #5121af;
+      text-decoration: none;
+
+      &:hover{
+        color: lighten(#5121af, 25%);
+        text-decoration: none;
+      }
+    }
+  }
+}
