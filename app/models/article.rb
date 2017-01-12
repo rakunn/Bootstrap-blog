@@ -5,6 +5,9 @@ class Article < ActiveRecord::Base
 
   attr_accessor :tag_list
 
+  has_attached_file :image
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+
   def tag_list
     self.tags.collect do |tag|
       tag.name
