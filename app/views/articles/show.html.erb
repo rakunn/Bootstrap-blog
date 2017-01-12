@@ -26,6 +26,13 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="tags-container">
+          Tags:
+          <% @article.tags.each do |tag| %>
+              <%= link_to tag.name, tag_path(tag) %>
+          <% end %>
+        </p>
+
         <p><%= @article.body %></p>
       </div>
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
