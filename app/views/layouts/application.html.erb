@@ -5,7 +5,7 @@
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -35,9 +35,11 @@
         <li>
           <a href="/">Home</a>
         </li>
-        <li>
-          <%= link_to 'Add an article', new_article_path %>
-        </li>
+        <% if logged_in? %>
+            <li>
+              <%= link_to 'Add an article', new_article_path %>
+            </li>
+        <% end %>
         <li>
           <%= link_to 'Browse by tags', tags_path %>
         </li>
@@ -59,15 +61,15 @@
 </nav>
 
 <% if !notice.blank? %>
-  <div class="alert alert-success top-alert-container" role="alert">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p class="notice"><i class="fa fa-hand-peace-o" aria-hidden="true"></i> <%= notice %></p>
+    <div class="alert alert-success top-alert-container" role="alert">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="notice"><i class="fa fa-hand-peace-o" aria-hidden="true"></i> <%= notice %></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 <% end %>
 
 <%= yield %>
