@@ -22,8 +22,10 @@
         <% @tags.each do |tag| %>
             <tr>
               <td><%= link_to tag.name, tag_path(tag) %></td>
-              <td><%= link_to "Edit tag", edit_tag_path(tag), class: "edit-tags" %></td>
-              <td><%= link_to "Delete tag", tag_path(tag), class: "edit-tags", method: :delete, data: {confirm: "Really delete this tag?"} %></td>
+              <% if logged_in? %>
+                <td><%= link_to "Edit tag", edit_tag_path(tag), class: "edit-tags" %></td>
+                <td><%= link_to "Delete tag", tag_path(tag), class: "edit-tags", method: :delete, data: {confirm: "Really delete this tag?"} %></td>
+              <% end %>
             </tr>
         <% end %>
       </table>

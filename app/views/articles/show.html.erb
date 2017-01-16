@@ -11,12 +11,14 @@
         </div>
       </div>
     </div>
-    <%= link_to edit_article_path(@article), class: 'edit_link' do %>
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Article
-    <% end %>
+    <% if logged_in? %>
+      <%= link_to edit_article_path(@article), class: 'edit_link' do %>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Article
+      <% end %>
 
-    <%= link_to article_path(@article), class: 'edit_link', method: :delete, data: {confirm: "Really delete the article?"} do %>
-        <i class="fa fa-trash-o" aria-hidden="true"></i> Delete Article
+      <%= link_to article_path(@article), class: 'edit_link', method: :delete, data: {confirm: "Really delete the article?"} do %>
+          <i class="fa fa-trash-o" aria-hidden="true"></i> Delete Article
+      <% end %>
     <% end %>
   </div>
 </header>
