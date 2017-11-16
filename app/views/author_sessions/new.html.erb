@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-heading">
-          <h1>Add Article</h1>
+          <h1>Strona logowania (dla autorów :-) )</h1>
         </div>
       </div>
     </div>
@@ -19,12 +19,12 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <%= form_tag author_sessions_path, method: :post, class: 'form-style' do %>
             <p class="field">
-              <%= label_tag :email %>
+              <%= label_tag :email, 'E-mail' %>
               <%= text_field_tag :email %>
               <br/>
             </p>
             <p class="field">
-              <%= label_tag :password %>
+              <%= label_tag :password, 'Hasło' %>
               <%= password_field_tag :password %>
               <br/>
             </p>

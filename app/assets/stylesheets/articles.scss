@@ -11,6 +11,7 @@
 
   p{
     text-align: center;
+    font-family: inherit;
 
     i{
       margin-right: 15px;
@@ -109,7 +110,9 @@ article{
   }
 
   .comment-section{
+    padding-top: 5px;
     margin-top: 50px;
+    background-color: rgb(244,244,244);
 
     .comment-container{
       p{
@@ -159,4 +162,17 @@ article{
       }
     }
   }
+}
+
+pre {
+ padding: 5px 15px;
+ overflow: hidden;
+ word-break: keep-all;
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+ line-height: 1.5em;
+ text-align: justify;
 }

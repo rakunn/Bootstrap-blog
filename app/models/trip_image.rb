@@ -1,0 +1,3 @@
+class TripImage < ApplicationRecord
+
+end

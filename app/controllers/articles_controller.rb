@@ -13,12 +13,13 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    4.times {@article.assets.build}
   end
 
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to @article, :notice => 'Article created with success!'
+      redirect_to @article, :notice => 'Artykuł stworzony z powodzeniem! Super!'
     else
       render 'new'
     end
@@ -26,12 +27,13 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    4.times { @article.assets.build }
   end
 
   def update
     @article = Article.find(params[:id])
     if @article.update_attributes(article_params)
-      redirect_to @article, :notice => 'Article updated with success!'
+      redirect_to @article, :notice => 'Artykuł zaktualizowany z powodzeniem! Mega!!'
     else
       render 'edit'
     end
@@ -40,13 +42,13 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     if @article.destroy
-      redirect_to articles_path, :notice => 'Article deleted with success!'
+      redirect_to articles_path, :notice => 'Artykuł skasowany! Co za szkoda!'
     end
   end
 
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, :subtitle, :tag_list, :image)
+    params.require(:article).permit(:title, :body, :subtitle, :tag_list, :image, :trip_image, assets_attributes: [:image])
   end
 end

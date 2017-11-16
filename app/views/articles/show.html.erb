@@ -7,17 +7,17 @@
         <div class="post-heading">
           <h1><%= @article.title %></h1>
           <h2 class="subheading"><%= @article.subtitle %></h2>
-          <span class="meta">Posted by <a href="#">Start Bootstrap</a> on <%= @article.created_at.strftime("%B %d, %Y") %></span>
+          <span class="meta">Napisane przez <a href="#">Patrycja</a>, <%= @article.created_at.strftime("%B %d, %Y") %></span>
         </div>
       </div>
     </div>
     <% if logged_in? %>
       <%= link_to edit_article_path(@article), class: 'edit_link' do %>
-          <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Article
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edytuj artykuł
       <% end %>
 
       <%= link_to article_path(@article), class: 'edit_link', method: :delete, data: {confirm: "Really delete the article?"} do %>
-          <i class="fa fa-trash-o" aria-hidden="true"></i> Delete Article
+          <i class="fa fa-trash-o" aria-hidden="true"></i> Usuń artykuł
       <% end %>
     <% end %>
   </div>
@@ -29,7 +29,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <p class="tags-container">
-          Tags:
+          Tagi:
           <% @article.tags.each do |tag| %>
               <%= link_to tag.name, tag_path(tag) %>
           <% end %>
@@ -38,14 +38,24 @@
         <% if !@article.image.blank? %>
           <p><%= image_tag @article.image.url %></p>
         <% end %>
-
-        <p><%= @article.body %></p>
+        
+        <p><pre><%= @article.body %></pre></p>
+        
+        <ul>
+            <% for asset in @article.assets %>
+            <% if !asset.image_file_name.nil? %>
+            <li>
+              <%= image_tag asset.image.url(:original) %>
+            </li>
+            <% end %>
+            <% end %>
+        </ul>
       </div>
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <hr/>
-        <h2 class="comment-title">Comments</h2>
+        <h2 class="comment-title">Komentarze</h2>
         <button type="button" class="btn btn-primary btn-md pull-right" data-toggle="modal" data-target="#myModal">
-          Post a comment
+          Napisz komentarz
         </button>
       </div>
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 comment-section">
@@ -60,15 +70,17 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Post a comment</h4>
+        <h4 class="modal-title">Napisz komentarz</h4>
       </div>
       <div class="modal-body">
         <%= render partial: 'comments/form' %>
       </div>
+      <% if logged_in? %>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+        <button type="button" class="btn btn-primary">Zapisz zmiany</button>
       </div>
+      <% end %>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->

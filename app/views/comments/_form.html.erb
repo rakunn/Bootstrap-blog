@@ -1,13 +1,13 @@
 <%= form_for [ @article, @comment ], html:{class: 'form-style'} do |f| %>
     <p>
-      <%= f.label :author_name, "Your Name" %><br/>
+      <%= f.label :author_name, "Twoje imię" %><br/>
       <%= f.text_field :author_name %>
     </p>
     <p>
-      <%= f.label :body, "Your Comment" %><br/>
+      <%= f.label :body, "Komentarz" %><br/>
       <%= f.text_area :body %>
     </p>
     <p>
-      <%= f.submit 'Submit' %>
+      <%= f.submit 'Wyślij' %>
     </p>
 <% end %>

@@ -10,7 +10,7 @@ body {
 }
 p {
   line-height: 1.5;
-  margin: 30px 0;
+  margin: 10px 0;
 }
 p a {
   text-decoration: underline;
@@ -33,7 +33,7 @@ a:focus {
 }
 a img:hover,
 a img:focus {
-  cursor: zoom-in;
+  cursor: pointer;
 }
 blockquote {
   color: #777777;
@@ -138,7 +138,7 @@ hr.small {
   }
 }
 .intro-header {
-  background-image: image-url('home-bg.jpg');
+  background-image: image-url('home-bg.jpg'); //Credit to Jakob Owens, https://unsplash.com/@jakobowens1
   background-color: #777777;
   background-repeat: no-repeat;
   background-position: center center;
@@ -150,7 +150,7 @@ hr.small {
   margin-bottom: 50px;
 }
 .post-header{
-  background-image: image-url('post-bg.jpg');
+  background-image: image-url('post-bg.jpg'); //Credit to 
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
@@ -230,13 +230,15 @@ hr.small {
 }
 .post-preview > a > .post-title {
   font-size: 30px;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 .post-preview > a > .post-subtitle {
   margin: 0;
   font-weight: 300;
   margin-bottom: 10px;
+  line-height: 1.5em;
+  text-align: justify;
 }
 .post-preview > .post-meta {
   color: #777777;

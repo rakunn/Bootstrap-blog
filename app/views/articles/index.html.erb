@@ -1,13 +1,12 @@
 <!-- Page Header -->
-<!-- Set your background image for this header on the line below. -->
 <header class="intro-header">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="site-heading">
-          <h1>Odin Project Assignment</h1>
+          <h1>Trzy tygodnie w Tajlandii</h1>
           <hr class="small">
-          <span class="subheading">A Blog by Jumpstartlab</span>
+          <span class="subheading">Mini-blog o naszych przygodach :-)</span>
         </div>
       </div>
     </div>
@@ -18,17 +17,19 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <% @articles.each do |article| %>
+      <% @articles.reverse_each do |article| %>
           <div class="post-preview">
             <%= link_to article_path(article) do %>
                 <h2 class="post-title">
                   <%= article.title %>
                 </h2>
                 <h3 class="post-subtitle">
-                  <%= truncate(article.body, length:75) %>
+                  <%= truncate(article.body, length:200) %>
                 </h3>
+                <div class="thumbnail"><% if !article.assets[0].nil? %><%= image_tag article.assets[0].image.url %><% end %></div>
             <% end %>
-            <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on <%= article.created_at.strftime("%B %d, %Y") %></p>
+            <p class="post-meta">Stworzony przez <a href="#">Patrycja</a> on <%= article.created_at.strftime("%B %d, %Y") %></p>
+            <p class="post-meta">Ilość komentarzy: <%= article.comments.length %></p>
           </div>
           <hr>
       <% end %>
@@ -36,7 +37,7 @@
       <!-- Pager -->
       <ul class="pager">
         <li class="next">
-          <a href="#">Older Posts &rarr;</a>
+          <a href="#">Starsze artykuły &rarr;</a>
         </li>
       </ul>
     </div>

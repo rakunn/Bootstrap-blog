@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment.article_id = params[:article_id]
 
     if @comment.save
-      redirect_to article_path(@comment.article), :notice => 'Comment was added successfully! Brilliant \'init!'
+      redirect_to article_path(@comment.article), :notice => 'Komentarz dodany! Super!'
     else
       redirect_to article_path(@comment.article)
     end

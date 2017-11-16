@@ -19,6 +19,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+* {
+  font-family: Arial;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -51,11 +54,13 @@ html{
 }
 
 body {
-  line-height: 1;
-  background: #edeceb;
+  background: rgb(233,233,233);  /* fallback for old browsers */
   overflow-x: hidden;
 }
-ol, ul {
+
+ul {
+
+  line-height: 1;
   list-style: none;
 }
 blockquote, q {
@@ -70,6 +75,19 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+.post-preview {
+  background-color: rgb(244,244,244);
+  padding: 5px 20px;
+}
+
+.thumbnail {
+  padding: 0;
+  background: none;
+  border: none;
+  width: 25%;
+}
+
 
 @import 'clean-blog';
 @import 'articles';

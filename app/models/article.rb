@@ -2,9 +2,11 @@ class Article < ActiveRecord::Base
   has_many :comments
   has_many :taggings
   has_many :tags, through: :taggings
-
+  has_many :assets
+  accepts_nested_attributes_for :assets, :allow_destroy => true
+  
   attr_accessor :tag_list
-
+  
   has_attached_file :image
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
